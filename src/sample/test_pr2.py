@@ -1,1 +1,1 @@
-Print("this is to check if the pull request is triggered")
+print("this is to check if the pull request is triggered")
