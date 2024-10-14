@@ -36,8 +36,12 @@ jobs:
         echo "Generating TF plan"
 
   tf-apply:
+
+    needs: tf-plan
+    runs-on: ubuntu-latest
+    environment: test_deploy
+
+    steps:
     - name: Test with pytest
-      needs: tf-plan
-      environment: test_deploy
       run: |
         echo "Applying terrform plan"
