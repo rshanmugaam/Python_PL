@@ -39,8 +39,9 @@ jobs:
 
     if: github.event != 'pull_request'
     needs: tf-plan
-    runs-on: ubuntu-latest
     environment: test_deploy
+    runs-on: ubuntu-latest
+    
 
     steps:
     - name: Test with pytest
