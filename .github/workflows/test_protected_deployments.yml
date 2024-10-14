@@ -36,10 +36,10 @@ jobs:
         echo "Generating TF plan"
 
   tf-apply:
-    if: github.event.pull_request.merged == true
+    if: github.ref == 'refs/heads/master'
     needs: tf-plan
-    runs-on: ubuntu-latest
     environment: test_deploy
+    runs-on: ubuntu-latest
 
     steps:
     - name: Test with pytest
