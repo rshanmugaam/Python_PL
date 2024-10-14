@@ -36,7 +36,7 @@ jobs:
         echo "Generating TF plan"
 
   tf-apply:
-    if: github.ref == 'refs/heads/master'
+    if: ${{ github.event_name != 'pull_request' }}
     needs: tf-plan
     environment: test_deploy
     runs-on: ubuntu-latest
