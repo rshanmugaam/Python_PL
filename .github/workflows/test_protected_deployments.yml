@@ -36,7 +36,7 @@ jobs:
         echo "Generating TF plan"
 
   tf-apply:
-    if: github.event.pull_request != true
+    if: github.event!= pull_request
     needs: tf-plan
     runs-on: ubuntu-latest
     environment: test_deploy
