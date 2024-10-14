@@ -4,11 +4,12 @@
 name: Python application Manual Workflow
 
 on:
+  push:
+    branches: [ "master" ]  
   workflow_dispatch:
     
 jobs:
   deploy:
-
     runs-on: ubuntu-latest
 
     steps:
