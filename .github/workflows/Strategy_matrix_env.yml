@@ -1,0 +1,22 @@
+name: Strategy_matrix_environment
+
+on:
+  workflow_dispatch:
+    
+    
+jobs:
+  example_strategy:
+
+    runs-on: ubuntu-latest
+
+    strategy:
+        fail-fast: false
+        matrix:          
+          option_env: ["dev", "prod"]
+    
+    steps:
+    - name: Steps to proceed
+
+      env_matrix: ${{ matrix.option_env }}
+      run: |
+         echo " Based on the environment we are running the worflow ,Current environment "
