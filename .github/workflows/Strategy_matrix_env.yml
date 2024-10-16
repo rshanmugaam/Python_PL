@@ -1,22 +1,27 @@
 name: Strategy_matrix_environment
 
-on:
-  workflow_dispatch:
-    
-    
+on: [push, pull_request]
+
 jobs:
-  example_strategy:
-
+  build:
     runs-on: ubuntu-latest
-
     strategy:
-        fail-fast: false
-        matrix:          
-          option_env: ["dev", "prod"]
-    
+      matrix:
+        environment: [development, staging, production]
     steps:
-    - name: Steps to proceed
+      - name: Checkout Code
+        uses: actions/checkout@v2
 
-      env_matrix: ${{ matrix.option_env }}
-      run: |
-         echo " Based on the environment we are running the worflow ,Current environment "
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Run Tests for ${{ matrix.environment }}
+        run: npm test -- --env=${{ matrix.environment }}
+
+      - name: Deploy to ${{ matrix.environment }}
+        run: echo "Deploying to ${{ matrix.environment }}"
