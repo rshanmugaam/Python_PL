@@ -2,7 +2,7 @@ name: AWS s3 commands
 on:
   push:
     branches:
-      - main
+      - master
 jobs:
   sync:
     runs-on: ubuntu-latest
