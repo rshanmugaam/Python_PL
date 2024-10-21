@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - master
+  pull_request:
 
 permissions:
       id-token: write   # This is required for requesting the JWT
