@@ -19,7 +19,7 @@ jobs:
     - name: Configure AWS Credentials
       uses: aws-actions/configure-aws-credentials@v2
       with:
-        role-to-assume: arn:aws:iam::871194705745:role/oidc_tester
+        role-to-assume: arn:aws:iam::871194705745:role/github_oidc_tester
         role-session-name: oidctester
         aws-region: eu-west-1
 
