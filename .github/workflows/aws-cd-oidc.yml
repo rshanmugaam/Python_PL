@@ -1,4 +1,4 @@
-name: AWS s3 commands
+name: AWS oidc deployment
 on:
   push:
     branches:
