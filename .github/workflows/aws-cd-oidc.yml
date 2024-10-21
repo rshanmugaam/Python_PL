@@ -24,4 +24,4 @@ jobs:
         aws-region: eu-west-1
 
     - name: GHA deployment using oidc
-      run: echo " The oidc is successful"
+      run: aws s3 ls
