@@ -19,5 +19,4 @@ jobs:
 
     - name: Sync to S3
     run: |
-    echo "Displaying the s3 list"
     aws s3 ls
