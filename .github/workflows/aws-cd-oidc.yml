@@ -1,10 +1,16 @@
 name: AWS oidc deployment
+
 on:
   push:
     branches:
       - master
+
+permissions:
+      id-token: write   # This is required for requesting the JWT
+      contents: read    
+
 jobs:
-  sync:
+  Deploy check:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout Repository
