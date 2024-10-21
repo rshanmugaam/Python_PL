@@ -2,8 +2,7 @@ name: AWS oidc deployment
 
 on:
   push:
-    branches:
-      - master
+    
   pull_request:
 
 permissions:
