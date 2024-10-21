@@ -10,7 +10,7 @@ permissions:
       contents: read    
 
 jobs:
-  Deploy check:
+  Deploycheck:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout Repository
