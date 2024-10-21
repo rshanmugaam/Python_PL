@@ -17,5 +17,5 @@ jobs:
         role-session-name: oidctester
         aws-region: eu-west-1
 
-    - name: Deploy
+    - name: GHA deployment using oidc
       run: echo " The oidc is successful"
